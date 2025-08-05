@@ -6,13 +6,13 @@
 
 menu "Analog to digital converters"
 
-config IIO_ADI_EMU
+config IIO_ADI_AD5592R_S
 	tristate "Analog Devices IIO Emulator driver"
 	depends on SPI
-	select SPI_ADI_EMU
+	select SPI_ADI_AD5592R_S
 	help
 		Say yes here to enable support for Analog Devices IIO Emulator driver.
-		To compile this driver as a module, choose M here: the module will be called iio-adi-emu.
+		To compile this driver as a module, choose M here: the module will be called iio-adi-ad5592r_s.
 
 
 config AB8500_GPADC

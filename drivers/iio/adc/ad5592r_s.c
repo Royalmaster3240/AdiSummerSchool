@@ -3,30 +3,30 @@
 #include <linux/iio/iio.h>
 
 
-static const struct iio_info adi_emu_info = {
+static const struct iio_info adi_ad5592r_s_info = {
 };
 
 
-static int adi_emu_probe(struct spi_device *spi)
+static int adi_ad5592r_s_probe(struct spi_device *spi)
 {
     struct iio_dev *indio_dev;
     indio_dev = devm_iio_device_alloc(&spi->dev, 0);
     if (!indio_dev)
         return -ENOMEM;
-    indio_dev->name = "iio-adi-emu";
-    indio_dev->info = &adi_emu_info;
+    indio_dev->name = "iio-adi-ad5592r_s";
+    indio_dev->info = &adi_ad5592r_s_info;
     return devm_iio_device_register(&spi->dev, indio_dev);
 }
 
 
-static struct spi_driver adi_emu_driver = {
+static struct spi_driver adi_ad5592r_s_driver = {
     .driver = {
-        .name = "iio-adi-emu",
+        .name = "iio-adi-ad5592r_s",
     },
-    .probe = adi_emu_probe,
+    .probe = adi_ad5592r_s_probe,
 
 };
-module_spi_driver(adi_emu_driver);
+module_spi_driver(adi_ad5592r_s_driver);
 
 
 MODULE_AUTHOR("Dragos Bogdan <dragos.bogdan@analog.com>");
