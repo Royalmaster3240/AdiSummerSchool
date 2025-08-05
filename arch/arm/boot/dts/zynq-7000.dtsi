@@ -233,6 +233,7 @@
 			clock-names = "ref_clk", "pclk";
 			#address-cells = <1>;
 			#size-cells = <0>;
+			
 		};
 
 		spi1: spi@e0007000 {

@@ -7,11 +7,11 @@
 menu "Analog to digital converters"
 
 config IIO_ADI_AD5592R_S
-	tristate "Analog Devices IIO Emulator driver"
+	tristate "AD5592R_S Driver"
 	depends on SPI
 	select SPI_ADI_AD5592R_S
 	help
-		Say yes here to enable support for Analog Devices IIO Emulator driver.
+		Say yes here to enable support for AD5592R_S driver.
 		To compile this driver as a module, choose M here: the module will be called iio-adi-ad5592r_s.
 
 

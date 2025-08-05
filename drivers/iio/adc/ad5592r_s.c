@@ -13,7 +13,7 @@ static int adi_ad5592r_s_probe(struct spi_device *spi)
     indio_dev = devm_iio_device_alloc(&spi->dev, 0);
     if (!indio_dev)
         return -ENOMEM;
-    indio_dev->name = "iio-adi-ad5592r_s";
+    indio_dev->name = "ad5592r_s";
     indio_dev->info = &adi_ad5592r_s_info;
     return devm_iio_device_register(&spi->dev, indio_dev);
 }
@@ -21,7 +21,7 @@ static int adi_ad5592r_s_probe(struct spi_device *spi)
 
 static struct spi_driver adi_ad5592r_s_driver = {
     .driver = {
-        .name = "iio-adi-ad5592r_s",
+        .name = "ad5592r_s",
     },
     .probe = adi_ad5592r_s_probe,
 
