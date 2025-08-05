@@ -6,6 +6,7 @@ config KERNEL_ALL_ADI_DRIVERS
 	imply SPI
 	imply I2C
 	imply IIO
+	imply IIO_ADI_EMU
 	imply PWM
 	imply JESD204
 	imply JESD204_TOP_DEVICE

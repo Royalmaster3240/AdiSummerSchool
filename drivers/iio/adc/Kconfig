@@ -6,6 +6,15 @@
 
 menu "Analog to digital converters"
 
+config IIO_ADI_EMU
+	tristate "Analog Devices IIO Emulator driver"
+	depends on SPI
+	select SPI_ADI_EMU
+	help
+		Say yes here to enable support for Analog Devices IIO Emulator driver.
+		To compile this driver as a module, choose M here: the module will be called iio-adi-emu.
+
+
 config AB8500_GPADC
 	bool "ST-Ericsson AB8500 GPADC driver"
 	depends on AB8500_CORE && REGULATOR_AB8500
