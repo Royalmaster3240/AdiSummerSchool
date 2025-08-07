@@ -3,10 +3,9 @@
 
 &spi0 {
 		status = "okay";
-        ad5592r_s: adc@0 {
-            reg = <0>;
-            compatible = "ad5592r_s";
-            spi-max-frequency = <10000000>;
-        };
-			
+            ad5592r_s: adc@0 {
+                reg = <0>;
+                compatible = "ad5592r_s";
+                spi-max-frequency = <10000000>;
+    };		
 };
