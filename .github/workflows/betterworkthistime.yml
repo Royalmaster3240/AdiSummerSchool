@@ -3,7 +3,7 @@ name: Abiel Neagoe CI
 on:
     push:
         branches:
-          - abiel_adc
+          "**"
 
 jobs:
     build-dtb:
