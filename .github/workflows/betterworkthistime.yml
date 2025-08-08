@@ -3,7 +3,7 @@ name: Abiel Neagoe CI
 on:
     push:
         branches:
-          - abiel_adc
+          "**"
 
 jobs:
     build-dtb:
@@ -20,7 +20,7 @@ jobs:
           - name: Build.dtb
             run: |
                 export ARCH=arm
-                export CROSS_COMPILE=arm-ilnux-gnueabi-
+                export CROSS_COMPILE=arm-linux-gnueabi-
                 make zynq_xcomm_adv7511_defconfig
                 make -j6 zynq-cora-z7.dtb
 
@@ -29,4 +29,3 @@ jobs:
             with:
                 name: dtb
                 path: arch/arm/boot/dts/make zynq-cora-z7.dtb
-
