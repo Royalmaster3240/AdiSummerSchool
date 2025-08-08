@@ -93,7 +93,7 @@ static int adi_ad5592r_s_probe(struct spi_device *spi)
         return devm_iio_device_register(&spi->dev, indio_dev);
 }
 
-/*test1234*/
+/*test12345*/
 static struct spi_driver adi_ad5592r_s_driver = {
     .driver = {
         .name = "ad5592r_s",
