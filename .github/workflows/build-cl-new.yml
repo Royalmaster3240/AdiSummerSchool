@@ -1,0 +1,32 @@
+name: Abiel Neagoe CI
+
+on:
+    push:
+        branches:
+            -abiel_adc
+
+jobs:
+    build-dtb:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v4
+
+          - name: Install dependinces
+            run: |
+                sudo apt update
+                sudo apt install make bc u-boot-tools flex bison libssl-dev tar kmod xz-utils gcc-arm-linux-gnueabi -y
+
+          - name: Build.dtb
+            run: |
+                export ARCH=arm
+                export CROSS_COMPILE=arm-ilnux-gnueabi-
+                make zynq_xcomm_adv7511_defconfig
+                make -j6 zynq-cora-z7.dtb
+
+          - name: Upload dtb
+            uses: actions/upload-artifact@v4
+            with:
+                name: dtb
+                path: arch/arm/boot/dts/make zynq-cora-z7.dtb
+
