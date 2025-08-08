@@ -3,7 +3,7 @@ name: Abiel Neagoe CI
 on:
     push:
         branches:
-          "**"
+        - "**"
 
 jobs:
     build-dtb:
@@ -17,6 +17,12 @@ jobs:
                 sudo apt update
                 sudo apt install make bc u-boot-tools flex bison libssl-dev tar kmod xz-utils gcc-arm-linux-gnueabi -y
 
+          - name: List available DTS files
+            run: |
+              ls arch/arm/boot/dts | grep zynq || echo "No zynq DTS files found."
+
+
+
           - name: Build.dtb
             run: |
                 export ARCH=arm
@@ -28,4 +34,4 @@ jobs:
             uses: actions/upload-artifact@v4
             with:
                 name: dtb
-                path: arch/arm/boot/dts/make zynq-cora-z7.dtb
+                path: arch/arm/boot/dts/zynq-cora-z7.dtb
